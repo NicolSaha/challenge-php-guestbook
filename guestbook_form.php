@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
-
 ?>
 
 
@@ -32,7 +30,7 @@ declare(strict_types=1);
                 </h2>
                 <p class="mt-3 text-lg leading-6 text-gray-500">
                     Your feedback is much appreciated! <br/>
-                    We hope you had a blast working with us :) <br/>
+                    I hope you had a blast working together :) <br/>
                     By leaving a message you will help other to find the same value as you did!</p>
 
                 <dl class="mt-8 text-base leading-6 text-gray-500">
@@ -69,8 +67,8 @@ declare(strict_types=1);
                     </div>
                 </dl>
                 <p class="mt-6 text-base leading-6 text-gray-500">
-                    We look forward working together again!
-                    <a href="#" class="font-medium text-gray-700 underline">Connect with us now</a>.
+                    Always looking forward to working together again! <br/>
+                    <a href="#" class="font-medium text-gray-700 underline">Connect with me now</a>.
                 </p>
             </div>
         </div>
@@ -80,25 +78,25 @@ declare(strict_types=1);
                     <div>
                         <label for="full_name" class="sr-only">Full name</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input id="full_name" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Full name">
+                            <input id="full_name" name="full_name" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Full name" required>
                         </div>
                     </div>
                     <div>
                         <label for="email" class="sr-only">Email</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input id="email" type="email" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Email">
+                            <input id="email" name="email" type="email" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Email" required>
                         </div>
                     </div>
                     <div>
-                        <label for="phone" class="sr-only">Phone</label>
+                        <label for="message_title" class="sr-only">Title</label>
                         <div class="relative rounded-md shadow-sm">
-                            <input id="phone" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Phone">
+                            <input id="message_title" name="message_title" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Title" required>
                         </div>
                     </div>
                     <div>
                         <label for="message" class="sr-only">Message</label>
                         <div class="relative rounded-md shadow-sm">
-                            <textarea id="message" rows="4" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Message"></textarea>
+                            <textarea id="message" name="message" rows="4" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Message" required></textarea>
                         </div>
                     </div>
                     <div class="">
