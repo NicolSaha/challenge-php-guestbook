@@ -1,0 +1,31 @@
+{
+  "name": "challenge-php-guestbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "@tailwindcss/ui": "^0.6.2",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.0.0",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1"
+  },
+  "scripts": {
+    "build": "postcss tailwind.css -o index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolSaha/challenge-php-guestbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolSaha/challenge-php-guestbook/issues"
+  },
+  "homepage": "https://github.com/NicolSaha/challenge-php-guestbook#readme"
+}
