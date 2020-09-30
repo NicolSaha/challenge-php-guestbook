@@ -1,14 +1,22 @@
 <?php
 declare(strict_types=1);
 
-require 'guestbook_form.php';
-require 'GuestbookPost.php';
+require './View/guestbook_form.php';
+require './Model/GuestbookPost.php';
+require './Control/PostManager.php';
 
+function whatIsHappening() {
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+
+}
+whatIsHappening();
+
+//DATE
 date_default_timezone_set(ini_get('date.timezone'));
-//date.timezone = "Europe/Amsterdam"
 
 // ERROR MESSAGING
-$errorMessage = '<p class="text-red-600 text-sm italic"> Invalid </p>';
+//$errorMessage = '<p class="text-red-600 text-sm italic"> Invalid </p>';
 $isFormValid = true;
 
 //CLEAN INPUT DATA
@@ -20,7 +28,7 @@ function cleanData($data){
 };
 
 //SET TO EMPTY
-$name = $email = $title = $message = "";
+$name = $email = $title = $message = $currentDate = "";
 
 if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['message_title']) && !empty($_POST['message'])) {
 
@@ -72,13 +80,14 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
         //SAVE TO GUESTBOOK
         $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
-        $guestbook->savePost();
 
         //POST TO GUESTBOOK
-        $guestbook->showPost();
+        $postNow = new PostManager($guestbook->getPostDate());
+        $postNow->savePost();
+        $postNow->showPost();
 
         //RESET INPUT FIELDS
-        $name = $email = $title = $message = "";
+        $name = $email = $title = $message = $currentDate = "";
     }
 
 }

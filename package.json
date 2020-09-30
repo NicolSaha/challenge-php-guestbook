@@ -15,7 +15,7 @@
     "@tailwindcss/custom-forms": "^0.2.1"
   },
   "scripts": {
-    "build": "postcss tailwind.css -o index.css"
+    "build": "postcss ./Tailwind/tailwind.css -o ./Tailwind/index.css"
   },
   "repository": {
     "type": "git",

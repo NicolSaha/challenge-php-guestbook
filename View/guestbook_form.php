@@ -3,15 +3,14 @@ declare(strict_types=1);
 
 ?>
 
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"
+    <link rel="stylesheet" href="./Tailwind/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
 
     <title>Guestbook</title>
@@ -28,7 +27,7 @@ declare(strict_types=1);
                 <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
                     Leave a message
                 </h2>
-                <p class="mt-3 text-lg leading-6 text-gray-500">
+                <p class="mt-3 text-lg leading-7 text-gray-500">
                     I hope you had a blast working together :) <br/>
                     By leaving a message you will help others to find the same value as you did!</p>
 
@@ -67,7 +66,8 @@ declare(strict_types=1);
                 </dl>
                 <p class="mt-6 text-base leading-6 text-gray-500">
                     Your feedback is much appreciated! <br/>
-                    Look forward to working together again! <br/>
+                    Looking forward to work together again! <br/>
+                    <br/>
                     <a href="#" class="font-medium text-gray-700 underline">Connect with me now</a>.
                 </p>
             </div>
@@ -97,6 +97,7 @@ declare(strict_types=1);
                         <label for="message" class="sr-only">Message</label>
                         <div class="relative rounded-md shadow-sm">
                             <textarea id="message" name="message" rows="4" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Message" required></textarea>
+                            <input id="date_of_posting" name="date_of_posting" type="hidden" value="<?php echo $currentDate; ?>">
                         </div>
                     </div>
                     <div class="">
