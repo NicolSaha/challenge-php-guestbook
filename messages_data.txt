@@ -1,16 +1,15 @@
-{
-    "full_name": "nicole",
-    "email": "nicol.saha@gmail.com",
-    "message_title": "df",
-    "message": "b"
-}{
-    "full_name": "nicole",
-    "email": "nicol.saha@gmail.com",
-    "message_title": "df",
-    "message": "b"
-}{
-    "full_name": "nicole",
-    "email": "nicol.saha@gmail.com",
-    "message_title": "df",
-    "message": "b"
-}
+""Array"\"\"Array"Array[
+    {
+        "full_name": "nicole",
+        "email": "nicol.saha@gmail.com",
+        "message_title": "title",
+        "message": "message"
+    }
+][
+    {
+        "full_name": "nicole",
+        "email": "nicol.saha@gmail.com",
+        "message_title": "title",
+        "message": "message"
+    }
+]

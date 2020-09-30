@@ -20,24 +20,47 @@ class GuestbookPost {
         $this->messageContent = $messageContent;
     }
 
+    /* public function savePost(): void
+    {
+        // SAVE MESSAGES
+        if (file_exists(self::FILE_NAME)) {
+            // Get new message
+            $newPost = $_POST;
+
+            // Get current file
+            $posts = file_get_contents(self::FILE_NAME);
+            $postsEncoded = json_encode($posts);
+            var_dump($postsEncoded);
+            echo gettype($postsEncoded);
+
+            // Add new message
+            $postsEncoded .= $newPost;
+
+            // Save message to file
+            file_put_contents(self::FILE_NAME, $postsEncoded, FILE_APPEND | LOCK_EX);
+        }
+
+    } */
+
+
     public function savePost(): void
     {
         // SAVE MESSAGES
         if (file_exists(self::FILE_NAME)) {
             // Get new message
-            $newPost = json_encode($_POST, JSON_PRETTY_PRINT);
-            //$newPostDecoded = html_entity_decode($newPost);
+            $newPost = $_POST;
 
             // Get current file
             $posts = file_get_contents(self::FILE_NAME);
+            $posts = json_decode($posts, true);
 
             // Add new message
-            $posts .= $newPost;
+            $posts[] = $newPost;
+            $posts = json_encode($posts, JSON_PRETTY_PRINT);
 
             // Save message to file
             file_put_contents(self::FILE_NAME, $posts, FILE_APPEND | LOCK_EX);
         }
-
     }
 
     public function showPost()
