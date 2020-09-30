@@ -83,8 +83,8 @@ class GuestbookPost {
             echo '<div class="hidden md:block">
                                 <div>
                                     <div class="text-sm leading-5 text-gray-900">
-                                         <span> Title: ' . $postItem['message_title'] . '</span> </div>';
-            echo '<div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
+                                         <span> <b><i>Title:</i></b> ' . $postItem['message_title'] . '</span> </div>';
+            echo '<div class="mt-2 flex items-center text-sm leading-5 text-gray-900">
                                      ' . $postItem['message'] . '</div>
                                 </div>
                             </div>

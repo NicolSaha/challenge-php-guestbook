@@ -29,9 +29,8 @@ declare(strict_types=1);
                     Leave a message
                 </h2>
                 <p class="mt-3 text-lg leading-6 text-gray-500">
-                    Your feedback is much appreciated! <br/>
                     I hope you had a blast working together :) <br/>
-                    By leaving a message you will help other to find the same value as you did!</p>
+                    By leaving a message you will help others to find the same value as you did!</p>
 
                 <dl class="mt-8 text-base leading-6 text-gray-500">
                     <div>
@@ -67,7 +66,8 @@ declare(strict_types=1);
                     </div>
                 </dl>
                 <p class="mt-6 text-base leading-6 text-gray-500">
-                    Always looking forward to working together again! <br/>
+                    Your feedback is much appreciated! <br/>
+                    Look forward to working together again! <br/>
                     <a href="#" class="font-medium text-gray-700 underline">Connect with me now</a>.
                 </p>
             </div>
