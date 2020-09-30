@@ -85,9 +85,13 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
 
 
-
-//TODO: Message is then displayed and last message  op top (new-old)
+//TODO: Keeping messages visible without submitting one first
+//TODO: Message is then displayed and last message op top (new-old)
 //TODO: Only show the latest 20 posts.
+//TODO: input field with how many visible messages
+//TODO: Profanity filter
+//TODO: replace it with an image of such a smiley
+
 
 
 
