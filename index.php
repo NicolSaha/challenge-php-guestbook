@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 require 'guestbook_form.php';
-require 'Guestbook.php';
+require 'GuestbookPost.php';
 
 date_default_timezone_set(ini_get('date.timezone'));
 //date.timezone = "Europe/Amsterdam"
@@ -46,7 +46,7 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
         $isFormValid = false;
     }
 
-//VALIDATE NAME & EMAIL & TITLE & MESSAGE
+//VALIDATE NAME
     $string_exp = "/^[A-Za-z .'-]+$/";
 
     if (!empty($_POST['full_name'])) {
@@ -58,28 +58,34 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
         $isFormValid = false;
     }
 
+//VALIDATE TITLE
     if (!empty($_POST['message_title'])) {
         $title = cleanData($_POST['message_title']);
-        $title = preg_match($string_exp, $title);
+        if (preg_match($string_exp, $name) == false) {
+            $isFormValid = false;
+        }
     } else {
         $isFormValid = false;
     }
 
+//VALIDATE MESSAGE
     if (!empty($_POST['message'])) {
         $message = cleanData($_POST['message']);
-        $message = preg_match($string_exp, $message);
+        if (preg_match($string_exp, $name) == false) {
+            $isFormValid = false;
+        }
     } else {
         $isFormValid = false;
     }
 
+//CHECK IS FORM IS VALID
     if ($isFormValid == true) {
         // DATE
         $currentDate = new DateTime();
         $currentDateFormatted = $currentDate->format('d/m/Y H:i A');
 
-        var_dump($name);
         //SAVE TO GUESTBOOK
-        $guestbook = new Guestbook($currentDateFormatted, $name, $email, $title, $message);
+        $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
         $guestbook->savePost();
 
         //POST TO GUESTBOOK
@@ -90,7 +96,6 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
     }
 
 }
-
 
 //TODO: Message is then displayed and last message  op top (new-old)
 //TODO: Only show the latest 20 posts.
