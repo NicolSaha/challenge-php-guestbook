@@ -83,6 +83,9 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
 }
 
+
+
+
 //TODO: Message is then displayed and last message  op top (new-old)
 //TODO: Only show the latest 20 posts.
 
