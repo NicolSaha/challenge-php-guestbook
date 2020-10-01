@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-require './View/guestbook_form.php';
 require './Model/GuestbookPost.php';
 require './Control/PostManager.php';
+require './View/guestbook_form.php';
 
 function whatIsHappening() {
     echo '<h2>$_POST</h2>';
@@ -80,12 +80,7 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
         //SAVE TO GUESTBOOK
         $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
-
-        //POST TO GUESTBOOK
         //$postNow = new PostManager($guestbook->getPostDate());
-        $postNow = new PostManager();
-        $postNow->savePost();
-        $postNow->showPost();
 
         //RESET INPUT FIELDS
         $name = $email = $title = $message = $currentDate = "";
@@ -93,9 +88,18 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
 }
 
+//POST TO GUESTBOOK
+$postNow = new PostManager();
+$postNow->savePost();
+$postNow->showPost();
+
+// HTML IMPORT LAST
+
+
 //TODO: Keeping messages visible without submitting one first
 //TODO: Message is then displayed and last message op top (new-old)
 //TODO: Only show the latest 20 posts.
+
 //TODO: Input field with how many visible messages
 //TODO: Profanity filter
 //TODO: Replace it with an image of such a smiley
