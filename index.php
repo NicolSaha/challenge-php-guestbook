@@ -76,13 +76,14 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
     if ($isFormValid == true) {
         // DATE
         $currentDate = new DateTime();
-        $currentDateFormatted = $currentDate->format('d/m/Y H:i A');
+        $currentDateFormatted = $currentDate->format('d/m/Y H:i');
 
         //SAVE TO GUESTBOOK
         $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
 
         //POST TO GUESTBOOK
-        $postNow = new PostManager($guestbook->getPostDate());
+        //$postNow = new PostManager($guestbook->getPostDate());
+        $postNow = new PostManager();
         $postNow->savePost();
         $postNow->showPost();
 
@@ -92,14 +93,12 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
 }
 
-
-
 //TODO: Keeping messages visible without submitting one first
 //TODO: Message is then displayed and last message op top (new-old)
 //TODO: Only show the latest 20 posts.
-//TODO: input field with how many visible messages
+//TODO: Input field with how many visible messages
 //TODO: Profanity filter
-//TODO: replace it with an image of such a smiley
+//TODO: Replace it with an image of such a smiley
 
 
 

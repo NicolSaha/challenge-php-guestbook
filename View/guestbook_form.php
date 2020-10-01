@@ -1,8 +1,3 @@
-<?php
-declare(strict_types=1);
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -97,7 +92,7 @@ declare(strict_types=1);
                         <label for="message" class="sr-only">Message</label>
                         <div class="relative rounded-md shadow-sm">
                             <textarea id="message" name="message" rows="4" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Message" required></textarea>
-                            <input id="date_of_posting" name="date_of_posting" type="hidden" value="<?php echo $currentDate; ?>">
+                            <input id="date_of_posting" name="date_of_posting" type="hidden" value="<?php '' ?>">
                         </div>
                     </div>
                     <div class="">

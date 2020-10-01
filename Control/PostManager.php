@@ -6,10 +6,10 @@ class PostManager {
     const FILE_NAME = 'messages_data.json';
     private $postDate;
 
-    public function __construct($postDate)
+   /* public function __construct($postDate)
     {
         $this->postDate = $postDate;
-    }
+    }*/
 
     public function savePost(): void
     {
@@ -33,10 +33,9 @@ class PostManager {
     }
 
     public function showPost(){
-
+    //GET POSTS DATA
     $posts = file_get_contents(self::FILE_NAME);
     $postsDecoded = json_decode($posts, true);
-    //var_dump($postsDecoded);
 
     //SHOW POSTS DATA
     echo '<div class="bg-gray-100 shadow overflow-hidden sm:rounded-md">
