@@ -20,9 +20,9 @@ class GuestbookPost {
         $this->messageContent = $messageContent;
     }
 
-    public function getPostDate(): string
+    /* public function getPostDate(): string
     {
         return $this->postDate;
-    }
+    } */
 
 }

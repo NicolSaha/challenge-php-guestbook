@@ -5,7 +5,7 @@ class PostManager
 {
 
     const FILE_NAME = 'messages_data.json';
-    private $postDate;
+    //private $postDate;
 
     /* public function __construct($postDate)
      {

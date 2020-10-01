@@ -7,14 +7,13 @@ require './Control/PostManager.php';
 function whatIsHappening() {
     echo '<h2>$_POST</h2>';
     var_dump($_POST);
-
 }
 whatIsHappening();
 
 //DATE
 date_default_timezone_set(ini_get('date.timezone'));
 
-// ERROR MESSAGING
+//ERROR MESSAGING
 //$errorMessage = '<p class="text-red-600 text-sm italic"> Invalid </p>';
 $isFormValid = true;
 
@@ -26,7 +25,7 @@ function cleanData($data){
     return $data;
 };
 
-//SET TO EMPTY
+//SET VARIABLES TO EMPTY
 $name = $email = $title = $message = $currentDate = "";
 
 if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['message_title']) && !empty($_POST['message'])) {
