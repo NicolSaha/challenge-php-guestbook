@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 require './Model/GuestbookPost.php';
 require './Control/PostManager.php';
-require './View/guestbook_form.php';
 
 function whatIsHappening() {
     echo '<h2>$_POST</h2>';
@@ -81,6 +80,9 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
         //SAVE TO GUESTBOOK
         $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
         //$postNow = new PostManager($guestbook->getPostDate());
+        //POST TO GUESTBOOK
+        $postNow = new PostManager();
+        $postNow->savePost();
 
         //RESET INPUT FIELDS
         $name = $email = $title = $message = $currentDate = "";
@@ -89,11 +91,11 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 }
 
 //POST TO GUESTBOOK
-$postNow = new PostManager();
-$postNow->savePost();
-$postNow->showPost();
+$postManagerShow = new PostManager();
+$postManagerShow->showPost();
 
 // HTML IMPORT LAST
+require './View/guestbook_form.php';
 
 
 //TODO: Keeping messages visible without submitting one first
