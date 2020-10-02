@@ -4,14 +4,10 @@ declare(strict_types=1);
 require './Model/GuestbookPost.php';
 require './Control/PostManager.php';
 
-function whatIsHappening() {
-    echo '<h2>$_POST</h2>';
-    var_dump($_POST);
-}
-whatIsHappening();
-
 //DATE
 date_default_timezone_set(ini_get('date.timezone'));
+$currentDate = new DateTime();
+$currentDateFormatted = $currentDate->format('d/m/Y H:i');
 
 //ERROR MESSAGING
 //$errorMessage = '<p class="text-red-600 text-sm italic"> Invalid </p>';
@@ -26,7 +22,7 @@ function cleanData($data){
 };
 
 //SET VARIABLES TO EMPTY
-$name = $email = $title = $message = $currentDate = "";
+$name = $email = $title = $message = "";
 
 if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['message_title']) && !empty($_POST['message'])) {
 
@@ -78,35 +74,26 @@ if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['mes
 
         //SAVE TO GUESTBOOK
         $guestbook = new GuestbookPost($currentDateFormatted, $name, $email, $title, $message);
-        //$postNow = new PostManager($guestbook->getPostDate());
+
         //POST TO GUESTBOOK
         $postNow = new PostManager();
         $postNow->savePost();
 
         //RESET INPUT FIELDS
-        $name = $email = $title = $message = $currentDate = "";
+        $name = $email = $title = $message = "";
     }
-
 }
 
 //POST TO GUESTBOOK
 $postManagerShow = new PostManager();
-$postManagerShow->showPost();
+$postsDecodedReversed = $postManagerShow->showPost();
 
 // HTML IMPORT LAST
 require './View/guestbook_form.php';
 
-
-//TODO: Keeping messages visible without submitting one first
-//TODO: Message is then displayed and last message op top (new-old)
-//TODO: Only show the latest 20 posts.
-
 //TODO: Input field with how many visible messages
 //TODO: Profanity filter
 //TODO: Replace it with an image of such a smiley
-
-
-
 
 
 

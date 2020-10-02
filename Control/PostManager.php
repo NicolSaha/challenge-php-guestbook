@@ -5,12 +5,7 @@ class PostManager
 {
 
     const FILE_NAME = 'messages_data.json';
-    //private $postDate;
-
-    /* public function __construct($postDate)
-     {
-         $this->postDate = $postDate;
-     }*/
+    const MAX_POSTS = 20;
 
     public function savePost(): void
     {
@@ -38,7 +33,10 @@ class PostManager
         //GET POSTS DATA
         $posts = file_get_contents(self::FILE_NAME);
         $postsDecoded = json_decode($posts, true);
-        return $postsDecoded;
+        $postsDecodedReversed = array_slice(array_reverse($postsDecoded), 0, self::MAX_POSTS - 1);
+
+        return $postsDecodedReversed;
+
     }
 }
 
